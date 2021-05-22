@@ -75,7 +75,7 @@ if iconv_dep.found() or cc.has_function('iconv_open')
 endif
 
 freetype_dep = dependency('freetype2',version: '>= 2.10.92',
-                          default_options: ['default_library=' + get_option('default_library'), 'harfbuzz=disabled']) # workaround for https://github.com/mesonbuild/meson/issues/8047
+                          default_options: ['default_library=' + get_option('default_library')]) # workaround for https://github.com/mesonbuild/meson/issues/8047
 if freetype_dep.found()
     deps += freetype_dep
     conf.set('CONFIG_FREETYPE', 1)
